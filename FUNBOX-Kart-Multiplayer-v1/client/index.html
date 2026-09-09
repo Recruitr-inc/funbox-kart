@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>FUNBOX | Recruitr™</title>
+<style>
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#10131a;font-family:Arial,sans-serif}
+#game{width:100%;height:100%} canvas{display:block}
+#menu{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 50% 35%,#263143,#0e1117 65%);color:#fff;z-index:10}
+.card{width:min(420px,88vw);text-align:center;background:rgba(12,15,22,.88);padding:32px;border:1px solid #3a4352;border-radius:22px;box-shadow:0 20px 70px #0008}
+.logo{font-size:58px;font-weight:900;letter-spacing:6px}.brand{font-size:14px;letter-spacing:4px;margin-top:2px}
+input{width:100%;box-sizing:border-box;padding:14px;margin-top:20px;border-radius:10px;border:1px solid #46505f;background:#171c25;color:#fff;font-size:16px}
+button{width:100%;margin-top:12px;padding:14px;border:0;border-radius:10px;background:#fff;color:#111;font-weight:800;font-size:16px;cursor:pointer}
+#status{min-height:22px;margin-top:12px;color:#fbbf24}
+.loader{height:5px;background:#303846;border-radius:9px;margin-top:25px;overflow:hidden}.bar{height:100%;width:100%;background:#fff;animation:load 1.4s ease-in-out infinite}
+@keyframes load{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+.footer{margin-top:30px;font-size:11px;opacity:.55}
+</style>
+</head>
+<body>
+<div id="game"></div>
+<div id="menu">
+ <div class="card">
+  <div class="logo">FUNBOX</div><div class="brand">Recruitr™</div>
+  <input id="name" maxlength="18" placeholder="Your name">
+  <input id="room" maxlength="8" placeholder="Room code">
+  <button id="join">JOIN RACE</button>
+  <div id="status"></div>
+  <div class="loader"><div class="bar"></div></div>
+  <div class="footer">© Recruitr™ People Tech</div>
+ </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/phaser@3.90.0/dist/phaser.min.js"></script>
+<script src="https://cdn.socket.io/4.8.1/socket.io.min.js"></script>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
